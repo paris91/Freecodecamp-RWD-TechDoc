@@ -20,6 +20,7 @@ body {
   display: block;
   position:relative;
   left: 300px;
+  width: 70vw;
 }
 
 /************************************************************
@@ -27,15 +28,13 @@ body {
                         NAVBAR
 *************************************************************
 ************************************************************/
-
 #titleH1 {
   font-size: 2.2em;
   white-space: nowrap;
-  border-style: solid;
-  border-width: 0 0 0.75px 0;
-  height: 20vh;
   width: 300px;
   text-align: center;
+  padding-top: 30px;
+  height: 15vh;
 }
 
 #navbar a {
@@ -43,22 +42,21 @@ body {
   color: #555;
   font-size: 1.15em;
   border-style: solid;
-  border-width: 0.75px 0 0.75px 0;
-  padding: 15px 10px 15px 10px;
+  border-width: 1px 0 0 0;
+  padding: 15px 10px 15px 20px;
   display: block;
   margin-left: 0px;
 }
 
 #main-doc {
-  padding: 30px;
+  padding: 30px 30px 30px 50px;
   border-style: solid;
-  border-width: 0 0 0 3px;
+  border-width: 0 0 0 1px;
   border-color: grey;
 }
 
 .main-section header {
   font-size: 1.75em;
-  font-weight:bold;
 }
 
 .main-section code {
