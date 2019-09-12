@@ -1,26 +1,10 @@
+:root {
+  --split: 300px;
+}
+
 body {
   margin-top: 0px;
   margin-left: 0px;
-}
-
-#navbar {
-  position: fixed;
-  display: block;
-  height: 100vh;
-}
-
-#nav-links {
-  display: block;
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 75vh;
-}
-
-#main-doc {
-  display: block;
-  position:relative;
-  left: 300px;
-  width: 70vw;
 }
 
 /************************************************************
@@ -28,13 +12,29 @@ body {
                         NAVBAR
 *************************************************************
 ************************************************************/
+
+#navbar {
+  position: fixed;
+  display: block;
+  z-index: 1;
+  opacity: 1;
+  background-color: white;
+}
+
+#nav-links {
+  display: block;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 #titleH1 {
   font-size: 2.2em;
   white-space: nowrap;
-  width: 300px;
+  width: var(--split, 300px);
   text-align: center;
   padding-top: 30px;
   height: 15vh;
+  width: 100%;
 }
 
 #navbar a {
@@ -48,11 +48,20 @@ body {
   margin-left: 0px;
 }
 
+/************************************************************
+*************************************************************
+                        CONTENT
+*************************************************************
+************************************************************/
+
 #main-doc {
+  display: block;
+  position: relative;
   padding: 30px 30px 30px 50px;
   border-style: solid;
   border-width: 0 0 0 1px;
   border-color: grey;
+  z-index: 0;
 }
 
 .main-section header {
@@ -74,4 +83,41 @@ body {
   padding: 1em 1.5em;
   display: block;
   word-wrap: break-word;
+}
+
+/************************************************************
+*************************************************************
+                        Responsive Styling
+*************************************************************
+************************************************************/
+
+@media (max-width: 599px) {
+  #navbar {
+    height: var(--split, 300px);
+    width: 95vw;
+    top: 0;
+  }
+  #nav-links {
+    height: 180px;
+    border-style: solid;
+    border-width: 1px;
+  }
+  #main-doc {
+    margin: var(--split, 300px) 0px 0px 0px;
+  }
+}
+
+
+@media (min-width: 600px) {
+  #navbar {
+    height: 100vh;
+  }
+
+  #nav-links {
+    height: 75vh;
+  }
+
+  #main-doc {
+    margin: 0px 0px 0px var(--split, 300px);
+  }
 }
